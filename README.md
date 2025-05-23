@@ -1,2 +1,2 @@
-# alu-shell
-Next Project
+# alu-shell project
+
