@@ -1,11 +1,3 @@
 #!/bin/bash
 
-# Get current owner of the file 'hello'
-current_owner=$(stat -c %U hello)
-
-# Check if the current owner is 'guillaume'
-if [ "$current_owner" = "guillaume" ]
-then
-    # If it is, change cthe owner to 'vincent'
-     chown vincent hello
-fi
+if [ "$(stat -c %U hello)" = "guillaume" ]; then chown vincent hello; fi
