@@ -1,0 +1,2 @@
+#!/bin/bash
+i=1; while read l; do ((i%2!=0))&&echo "$l"; i=$((i+1)); done
