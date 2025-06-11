@@ -1,0 +1,2 @@
+#!/bin/bash
+dc -e "[water]I $WATER [stir]I ${STIR//./} +[bestchol]O p"
