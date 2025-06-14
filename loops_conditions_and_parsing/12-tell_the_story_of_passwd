@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#
 # Script: 12-tell_the_story_of_passwd
 # Purpose: Parses the etc/passwd file and displays a narrative story of each user.
 # Requirements:
