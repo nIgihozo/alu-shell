@@ -1,20 +1,8 @@
 #!/usr/bin/env bash
-#
-# Script: 12-tell_the_story_of_passwd
-# Purpose: Parses the etc/passwd file and displays a narrative story of each user.
-# Requirements:
-# - Must use 'while' loop.
-# - Must use the Internal Field Separator (IFS) to parse colon-separated fields.
-# - 'for' and 'until' loops forbidden.
-# Output Format: "The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and rides COMMAND/SHELL.
-# USER ID's place is protected by passcode PASSWORD. more info about the user here: USER ID INFO"
+# Tells a story using input from /etc/passwd format
 
-# Set the Internal Field Separator (IFS) to a colon.
-# This tells the 'read' command to split input lines based on the colon character.
-# The '-r' option to 'read' prevents backlash escapes for being interpreted.
-# Were are reading each line of /etc/passwd into distinct variables.
-while IFS=':' read -r USERNAME PASSWORD USER_ID GROUP_ID USER_ID_INFO HOME_DIRECTORY COMMAND_SHELL; do
-    # Print the formatted string using the variables parsed from each line.
-    # Each variables corresponds to a field in the /etc/passwd entry.
-    echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND_SHELL. $USER_ID's place is protected bythe passcode $PASSWORD. more info about the user here: $USER_ID_INFO"
-done < /etc/passwd # Redirects to the content of /etc/passwd as input to the while loop.
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7;
+do
+        echo "The user $f1 is part of the $f4 gang, lives in $f6 and rides $f7. $f3's place is protected by the passcode $f2, more info about the user here: $f5"
+
+done</etc/passwd
