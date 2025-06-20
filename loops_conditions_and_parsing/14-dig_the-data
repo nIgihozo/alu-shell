@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-#
-awk '{count[$1" "$9]++} END {for (item in count) print count [item], item}' apache-access.log | sort -rn
+# This script groups Apache log traffic by IP and HTTP status code
+
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr                 
+
