@@ -1,3 +1,1 @@
-# alu-shell project
-
-Shell, init files, variables and expansions Project.
+Shell, processes and signals Final Linux Project
